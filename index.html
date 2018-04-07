@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Github User Search</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<style>
+		.col {
+			background: grey;
+			outline: 1px dotted;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col" id="users">1</div>
+			<div class="col">2</div>
+		</div>
+	</div>
+
+	<script>
+		var ul = document.getElementById('users');
+		var url = 'https://api.github.com/users';
+
+		fetch(url)
+			.then(resp => resp.json())
+			.then(data => {
+				let users = data;
+				console.log(users);
+			});
+	</script>
+</body>
+
+</html>
